@@ -1,0 +1,54 @@
+#===============================================================================
+# Title:        bashrc_iCub.sh
+# Description:  this is the iCub enviroment file - SUPERBUILD version
+# Date:         2020-AUG-19
+# Usage:        source bashrc_iCub.sh
+#===============================================================================
+if [ "$PS1" ]; then
+  echo "Setting up yarp and iCub env vars"
+fi
+# YARP and iCub enviroment variables
+export ROBOT_CODE=/usr/local/src/robot
+# Set the name of build path here
+export ROBOTOLOGY_SUPERBUILD_SOURCE_DIR=${ROBOT_CODE}/robotology-superbuild
+export YARP_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/robotology/YARP
+export ICUB_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/robotology/ICUB
+export icub_firmware_shared_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/robotology/icub-firmware-shared
+export ICUBcontrib_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/robotology/icub-contrib-common
+
+# Change the name of build path here, according to your needs
+export OBJ_SUBDIR="build"
+if [ "$OBJ_SUBDIR" != "" ]; then
+  # Project-specific variables
+  export ROBOTOLOGY_SUPERBUILD_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/${OBJ_SUBDIR}
+  export ROBOTOLOGY_SUPERBUILD_INSTALL_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/install
+  export YARP_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/robotology/YARP
+  export ICUB_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/robotology/ICUB
+  export icub_firmware_shared_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/robotology/icub-firmware-shared
+  export ICUBcontrib_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/robotology/ICUBcontrib
+  # Source the enviroment variables needed by the superbuild
+  if [ -f ${ROBOTOLOGY_SUPERBUILD_INSTALL_DIR}/share/robotology-superbuild/setup.sh ]; then
+    source ${ROBOTOLOGY_SUPERBUILD_INSTALL_DIR}/share/robotology-superbuild/setup.sh
+  fi
+fi
+
+# To enable tab completion on yarp port names
+if [ -f ${YARP_SOURCE_DIR}/scripts/yarp_completion ]; then
+  source ${YARP_SOURCE_DIR}/scripts/yarp_completion
+fi
+
+# Set the name of your robot here.
+# export YARP_ROBOT_NAME=
+if [ "$YARP_ROBOT_NAME" = "" ] && [ -f "${ROBOT_CODE}/yarp_robot_name.txt" ]
+then
+  export YARP_ROBOT_NAME=$( head --lines=1 ${ROBOT_CODE}/yarp_robot_name.txt )
+fi
+
+# Set-up optimizations
+export CMAKE_BUILD_TYPE=Release
+
+# DebugStream customization
+export YARP_VERBOSE_OUTPUT=0
+export YARP_COLORED_OUTPUT=1
+export YARP_TRACE_ENABLE=0
+export YARP_FORWARD_LOG_ENABLE=0

@@ -1,0 +1,13 @@
+[core]
+        pager = less -FRSX
+        editor = vim
+        autocrlf = input
+[merge]
+        tool = vimdiff
+[credential]
+        helper = cache --timeout=7200
+[branch]
+        autosetuprebase = always
+[user]
+	name = iCub User
+	email = robotcub-hackers@lists.sourceforge.net

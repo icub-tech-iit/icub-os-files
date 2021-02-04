@@ -1,0 +1,11 @@
+sudo
+ssh
+openssh-server
+nfs-common
+ntpdate
+libportaudiocpp0
+libportaudio2
+iperf
+dnsutils
+resolvconf
+bash-completion

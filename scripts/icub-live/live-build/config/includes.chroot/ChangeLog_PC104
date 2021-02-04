@@ -1,0 +1,79 @@
+2017-0630 Matteo Brunettini <matteo.brunettini@iit.it>
+  based on Debian 9.0 (Strecth)
+
+2016-01-18 Matteo Brunettini <matteo.brunettini@iit.it>
+  Built on Debian 8 (Jessie)
+
+2014-11-15 Matteo Brunettini <matteo.brunettini@iit.it>
+  Built with the Debian LIVE scripts
+  Changed the default password for icub user
+  Use the kernel flavour rt-amd64 (x86_64 with PREEMPT_RT patches)
+
+2013-12-20 Cardellino Alberto
+  Update OS to Debian Wheezy 7.2
+  Merged 'oc' and 'iit' ip configuration.
+     PC104 ip is now 10.0.0.2 and it mount from 10.0.0.1:/exports/code
+  Updated custom lsb-release file
+
+2013-05-27 Daniele E. Domenichelli
+  Update all packages except for:
+  - grub-common
+  - grub-pc
+  - linux-headers-2.6.32-5-686
+  - linux-headers-2.6.32-5-common
+  - linux-image-2.6.32-5-686
+  Install the following packages:
+  - vim
+  - git
+  - locate
+  - fxload
+  - mc (midnight commander)
+  - screen
+  - libtinyxml* (version 2.6.2 backporting from debian wheezy)
+  - libpcap-dev
+  - resolvconf
+  - bash-completion
+  - lsb-release
+  use http.debian.net instead of italian mirror
+  add backports repository to /etc/apt/sources.list
+  install from backports cmake (cmake-curses-gui cmake-data)
+  disabled backports repository
+  clean apt cache
+  purge ntp libopts25 packages
+  Check and fix file system
+
+2013-05-27 Alberto Cardellino
+
+  Update /etc/udev/rules.d/70-persistent-net.rules to detect assign the
+  correct names with newer pc104 boards
+  Update /etc/rciCub.d/S04_sound.sh to distinguish between MIC input and
+  output amplifier (DAC)
+  Mount /dev/sda1 with noatime in /etc/fstab
+  Mount tmpfs partitions in fstab and delete /etc/init.d/iCub-tmpfs-
+  mount.sh and /etc/rcS.d/S11iCub-tmpfs-mount.sh
+  Change filesystem to ext4 and drop journaling
+  .deb
+  - Rename eth0-conf to icub-net-conf-{iit,oc,dhcp,iKart}
+  - Fix files permissions
+
+2012-04-10 Cardellino Alberto
+ @iit version: Changed pc104 ip address from 10.0.0.20 to 10.0.0.10 to comply with iit internal standard.
+
+2010-10-17 Cardellino Alberto
+  Added kernel 2.6.33.7.2 without the rt-patch. This is necessary as temporary fix beacuse of an incompatibility between the rt-kernel and some drivers and applications which causes unacceptable communications delays on the ethernet.
+
+2010-08-30  Cardellino Alberto
+  Minor fix: clean dpkg history
+  added id mapping option for nfs v4
+
+2010-04-19  Cardellino Alberto
+  Updated O.S. to Debian Squeeze distribuition
+  kernel version: 2.6.33.7.2-rt30
+  Patched kernel with rt-patch from http://rt.wiki.kernel.org/
+  The filesystem inside the usb key is now persistant so new file can be written and modified directly on it
+  Moved iCub init script inside /etc/rciCub.d folder
+  /tmp, /var/run, /var/lock, /var/log folders are now mounted using tmpfs in RAM.
+  environment variables are inside /home/icub/.bash_iCubrc, loaded by /home/icub/.bashrc.
+  added script to automatically update ssh public key from server($ROBOT_CODE/.ssh/id_rsa.pub) to pc104 authorized_keys
+  cfw002 driver is inside the usb key in /lib/modules/$(uname -r)/iCubDrivers and cfw002 firmware is inside /lib/firmware/$(uname -r) folder
+

@@ -1,0 +1,43 @@
+# .bashrc_iCub
+# setup the iCub enviroment
+if [ "$PS1" ]; then 
+  echo "Setting up yarp and iCub env vars"
+fi
+# YARP and iCub enviroment variables
+export ROBOT_CODE=/usr/local/src/robot
+export ICUBcontrib_DIR=$ROBOT_CODE/iCubContrib
+export YARP_ROOT=$ROBOT_CODE/yarp
+export ICUB_ROOT=${ROBOT_CODE}/icub-main
+export ICUB_BUILD_PATHNAME="build-pc104"
+if [ "$ICUB_BUILD_PATHNAME" != "" ]; then
+ export YARP_DIR=${YARP_ROOT}/${ICUB_BUILD_PATHNAME}
+ export ICUB_DIR=${ICUB_ROOT}/${ICUB_BUILD_PATHNAME}
+ export icub_firmware_shared_DIR=${ROBOT_CODE}/icub-firmware-shared/${ICUB_BUILD_PATHNAME}
+ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${ROBOT_CODE}/icub-tests/suits/${ICUB_BUILD_PATHNAME}/plugin
+fi
+export YARP_DATA_DIRS=${YARP_DIR}/share/yarp:${ICUB_DIR}/share/iCub:${ICUBcontrib_DIR}/share/ICUBcontrib:${ROBOT_CODE}/icub-tests/suits
+# Set the name of your robot here.
+# Please change also the root user password
+ export YARP_ROBOT_NAME=
+ if [ "$YARP_ROBOT_NAME" = "" ] && [ -f "${ROBOT_CODE}/yarp_robot_name.txt" ]
+ then
+   export YARP_ROBOT_NAME=$( head --lines=1 ${ROBOT_CODE}/yarp_robot_name.txt )
+ fi
+# Set-up optimizations
+export CMAKE_BUILD_TYPE=Release
+export PATH=$PATH:$ICUB_DIR/bin:$YARP_DIR/bin
+# DebugStream customization
+export YARP_VERBOSE_OUTPUT=0
+export YARP_COLORED_OUTPUT=1
+export YARP_TRACE_ENABLE=0
+export YARP_FORWARD_LOG_ENABLE=0
+# To enable tab completion on yarp port names
+if [ -f $YARP_ROOT/scripts/yarp_completion ]; then
+  source $YARP_ROOT/scripts/yarp_completion
+fi
+# For compiling
+DRIVER_ROOT=/lib/modules/$(uname -r)/iCubDrivers/
+# to be used if the corresponding hardware is mounted on the robot 
+#export ESDCANAPI_DIR=${DRIVER_ROOT}/esdCanApi/
+#export PLXCANAPI_DIR=${DRIVER_ROOT}/plxCanApi/
+export CFW2CANAPI_DIR=${DRIVER_ROOT}/cfw002/

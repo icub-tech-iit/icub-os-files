@@ -1,0 +1,56 @@
+#===============================================================================
+# Title:        bashrc_iCub.sh
+# Description:  this is the iCub environment file
+# Date:         2020-AUG-19
+# Usage:        source bashrc_iCub.sh
+#===============================================================================
+if [ "$PS1" ]; then
+  echo "Setting up yarp and iCub env vars"
+fi
+# YARP and iCub enviroment variables
+export ROBOT_CODE=/usr/local/src/robot
+export YARP_SOURCE_DIR=${ROBOT_CODE}/yarp
+export ICUB_SOURCE_DIR=${ROBOT_CODE}/icub-main
+export icub_firmware_shared_SOURCE_DIR=${ROBOT_CODE}/icub-firmware-shared
+export YCM_SOURCE_DIR=${ROBOT_CODE}/ycm
+export RTF_DIR=${ROBOT_CODE}/robot-testing-framework/build
+export ICUB_TESTS=${ROBOT_CODE}/icub-tests
+export RobotTestingFramework_DIR=${ROBOT_CODE}/robot-testing-framework
+export ICUBcontrib_DIR=${ROBOT_CODE}/iCubContrib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${RTF_DIR}/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${ICUB_TESTS}/build/plugins
+
+# Change the name of build path here, according to your needs
+export OBJ_SUBDIR="build"
+if [ "$OBJ_SUBDIR" != "" ]; then
+  export YARP_BUILD_DIR=${YARP_SOURCE_DIR}/${OBJ_SUBDIR}
+  export ICUB_BUILD_DIR=${ICUB_SOURCE_DIR}/${OBJ_SUBDIR}
+  export YARP_DIR=${YARP_BUILD_DIR}
+  export ICUB_DIR=${ICUB_BUILD_DIR}
+  export icub_firmware_shared_BUILD_DIR=${icub_firmware_shared_SOURCE_DIR}/${OBJ_SUBDIR}
+  export icub_firmware_shared_DIR=${icub_firmware_shared_BUILD_DIR}
+  export YCM_DIR=${YCM_SOURCE_DIR}/${OBJ_SUBDIR}
+  export YARP_DATA_DIRS=${YARP_DIR}/share/yarp:${ICUB_DIR}/share/iCub:${ICUBcontrib_DIR}/share/ICUBcontrib:${ROBOT_CODE}/icub-tests/suites
+  export PATH=$PATH:${ICUB_DIR}/bin:${YARP_DIR}/bin:${ICUBcontrib_DIR}/bin:${RTF_DIR}/bin
+fi
+
+# To enable tab completion on yarp port names
+if [ -f $YARP_SOURCE_DIR/scripts/yarp_completion ]; then
+  source $YARP_SOURCE_DIR/scripts/yarp_completion
+fi
+
+# Set the name of your robot here.
+#export YARP_ROBOT_NAME=
+if [ "$YARP_ROBOT_NAME" = "" ] && [ -f "${ROBOT_CODE}/yarp_robot_name.txt" ]
+ then
+   export YARP_ROBOT_NAME=$( head --lines=1 ${ROBOT_CODE}/yarp_robot_name.txt )
+fi
+
+# Set-up optimizations
+export CMAKE_BUILD_TYPE=Release
+
+# DebugStream customization
+export YARP_VERBOSE_OUTPUT=0
+export YARP_COLORED_OUTPUT=1
+export YARP_TRACE_ENABLE=0
+export YARP_FORWARD_LOG_ENABLE=0

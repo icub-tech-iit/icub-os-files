@@ -1,0 +1,12 @@
+Software on the pc104 relies on an external server for three main services:
+Network file system	needed to access application code, both source and binaries
+Network Time Protocol	to be synchronized with server
+Internet connection - gateway
+
+In order to have those services up and running at boot, many configurations files need to be properly set-up, they are:
+/etc/fstab	store nfs configuration
+/etc/ntp.conf	store ntp configuration (used by ntpdate to get actual date, ntp daemon is not installed)
+/etc/network/interfaces	store ethernet configuration all other services rely on
+/etc/hosts	not striclty needed in fact, but update this file will keep your icubserver hostname and address associated
+
+Depending on your network configuration, ntp server, nfs server and gateway can have different ip addresses, therefore each file has to be updated when something changes
