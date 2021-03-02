@@ -24,7 +24,7 @@ if [ "$OBJ_SUBDIR" != "" ]; then
   export ROBOTOLOGY_SUPERBUILD_INSTALL_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/install
   export YARP_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/YARP
   export ICUB_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/ICUB
-  export icub_firmware_shared_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/icub-firmware-shared
+  export icub_firmware_shared_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/icub_firmware_shared
   export ICUBcontrib_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/ICUBcontrib
   # Source the enviroment variables needed by the superbuild
   if [ -f ${ROBOTOLOGY_SUPERBUILD_INSTALL_DIR}/share/robotology-superbuild/setup.sh ]; then
