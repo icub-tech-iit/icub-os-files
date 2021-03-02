@@ -1,7 +1,7 @@
 #===============================================================================
 # Title:        bashrc_iCub.sh
 # Description:  this is the iCub enviroment file - SUPERBUILD version
-# Date:         2020-AUG-19
+# Date:         2021-MAR-02
 # Usage:        source bashrc_iCub.sh
 #===============================================================================
 if [ "$PS1" ]; then
@@ -11,10 +11,10 @@ fi
 export ROBOT_CODE=/usr/local/src/robot
 # Set the name of build path here
 export ROBOTOLOGY_SUPERBUILD_SOURCE_DIR=${ROBOT_CODE}/robotology-superbuild
-export YARP_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/robotology/YARP
-export ICUB_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/robotology/ICUB
-export icub_firmware_shared_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/robotology/icub-firmware-shared
-export ICUBcontrib_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/robotology/icub-contrib-common
+export YARP_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/src/YARP
+export ICUB_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/src/ICUB
+export icub_firmware_shared_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/src/icub_firmware_shared
+export ICUBcontrib_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/src/icub-contrib-common
 
 # Change the name of build path here, according to your needs
 export OBJ_SUBDIR="build"
@@ -22,10 +22,10 @@ if [ "$OBJ_SUBDIR" != "" ]; then
   # Project-specific variables
   export ROBOTOLOGY_SUPERBUILD_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/${OBJ_SUBDIR}
   export ROBOTOLOGY_SUPERBUILD_INSTALL_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/install
-  export YARP_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/robotology/YARP
-  export ICUB_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/robotology/ICUB
-  export icub_firmware_shared_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/robotology/icub-firmware-shared
-  export ICUBcontrib_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/robotology/ICUBcontrib
+  export YARP_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/YARP
+  export ICUB_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/ICUB
+  export icub_firmware_shared_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/icub-firmware-shared
+  export ICUBcontrib_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/ICUBcontrib
   # Source the enviroment variables needed by the superbuild
   if [ -f ${ROBOTOLOGY_SUPERBUILD_INSTALL_DIR}/share/robotology-superbuild/setup.sh ]; then
     source ${ROBOTOLOGY_SUPERBUILD_INSTALL_DIR}/share/robotology-superbuild/setup.sh
@@ -33,8 +33,8 @@ if [ "$OBJ_SUBDIR" != "" ]; then
 fi
 
 # To enable tab completion on yarp port names
-if [ -f ${YARP_SOURCE_DIR}/scripts/yarp_completion ]; then
-  source ${YARP_SOURCE_DIR}/scripts/yarp_completion
+if [ -f ${YARP_SOURCE_DIR}/data/bash-completion/yarp ]; then
+  source ${YARP_SOURCE_DIR}/data/bash-completion/yarp
 fi
 
 # Set the name of your robot here.
