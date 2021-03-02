@@ -1,7 +1,7 @@
 #===============================================================================
 # Title:        bashrc_iCub.sh
 # Description:  this is the iCub environment file
-# Date:         2020-AUG-19
+# Date:         2021-MAR-02
 # Usage:        source bashrc_iCub.sh
 #===============================================================================
 if [ "$PS1" ]; then
