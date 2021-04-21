@@ -8,11 +8,13 @@
 #
 # AUTHOR : Matteo Brunettini <matteo.brunettini@iit.it>
 #
-# LATEST MODIFICATION DATE (2020-09-18):
+# LATEST MODIFICATION DATE (2021-04-21):
 #
-SCRIPT_VERSION="1.10.0"          # Sets version variable
+SCRIPT_VERSION="1.20.0"          # Sets version variable
 #
 SCRIPT_TEMPLATE_VERSION="1.2.1" #
+SCRIPT_NAME=$(realpath -s $0)
+SCRIPT_PATH=$(dirname $SCRIPT_NAME)
 #
 # #####################################################
 # COLORS
@@ -26,6 +28,8 @@ COL_NORMAL="\e[0m"
 # Defaults
 LOG_FILE=""
 # Locals
+REQUIRED_PACKAGES_LIST="live-build imagemagick lsb-release"
+SUPPORTED_DISTRO_LIST="buster"
 CONFIG_FILENAME=".icub-live.config"
 ARCHITECTURE="amd64"
 FLAVOUR="rt-amd64"
@@ -39,13 +43,14 @@ LIVE_DEFAULT_GROUPS="audio,dialout,sudo,video,dip,plugdev,netdev,powerdev"
 LIVE_TIMEZONE="Europe/Rome"
 LIVE_MODE="debian"
 INSTALLER="live"
-BOOTAPPEND="boot=live config quickreboot noeject net.ifnames=0 biosdevname=0"
+BOOTAPPEND="boot=live config quickreboot noeject net.ifnames=0 biosdevname=0 persistence"
 VERSION="7.10-$(date  +%y.%m.%d)"
+LIVE_NAME_PREFIX="icub-live_"
 if [ "$FLAVOUR" == "" ]
 then
-  LIVE_IMAGE_NAME="icub-live_${VERSION}-${ARCHITECTURE}.iso"
+  LIVE_IMAGE_NAME="${LIVE_NAME_PREFIX}${VERSION}-${ARCHITECTURE}.iso"
 else
-  LIVE_IMAGE_NAME="icub-live_${VERSION}-${FLAVOUR}.iso"
+  LIVE_IMAGE_NAME="${LIVE_NAME_PREFIX}${VERSION}-${FLAVOUR}.iso"
 fi
 _CUR_PATH=$(pwd)
 _FULL_SCRIPT_PATH_=$(realpath $0)
@@ -84,7 +89,7 @@ error() {
 
 exit_err () {
   error "$1"
-  cd _CUR_PATH
+  cd $_CUR_PATH
   close_log
   exit 1
 }
@@ -98,10 +103,14 @@ print_defs ()
   echo "Default parameters are"
   echo " SCRIPT_TEMPLATE_VERSION is $SCRIPT_TEMPLATE_VERSION"
   echo " SCRIPT_VERSION is $SCRIPT_VERSION"
+  echo " SCRIPT_NAME is $SCRIPT_NAME"
+  echo " SCRIPT_PATH is $SCRIPT_PATH"
   if [ "$LOG_FILE" != "" ]
   then
     echo "  log file is $LOG_FILE"
   fi
+  echo "  REQUIRED_PACKAGES_LIST is $REQUIRED_PACKAGES_LIST"
+  echo "  SUPPORTED_DISTRO_LIST is $SUPPORTED_DISTRO_LIST"
   echo "  ARCHITECTURE is $ARCHITECTURE"
   echo "  FLAVOUR is $FLAVOUR"
   echo "  CUSTOM_KERNEL is $CUSTOM_KERNEL"
@@ -113,6 +122,7 @@ print_defs ()
   echo "  BOOTAPPEND is $BOOTAPPEND"
   echo "  INSTALLER is $INSTALLER"
   echo "  VERSION is $VERSION"
+  echo "  LIVE_NAME_PREFIX is $LIVE_NAME_PREFIX"
 }
 
 usage ()
@@ -127,6 +137,7 @@ usage ()
   echo "  clean - cleanup build files"
   echo "  cleancache - clean only cache"
   echo "  cleanall - clean both build and cache files"
+  echo "  cleaniso - clean all iso and related files"
   echo "  all - execute clean, config and build"
   echo
   echo "options are :"
@@ -184,20 +195,77 @@ close_log()
   fi
 }
 
+################################################################################
+# Purpose: check if packages are installed and if needed, install them (only for
+# Debian and Ubuntu)
+# Arguments:
+#   $1 -> the list of packages to check
+################################################################################
+check_required_packages()
+{
+  local _package
+  for _package in $1
+    do
+     log "checking package $_package"
+     local _package_installed=$(dpkg-query -W --showformat='${Status}\n' $_package )
+     if [ "$_package_installed" != "install ok installed" ]; then
+       warn "The package $_package is not installed, installing now"
+       apt-get --yes install $_package
+     fi 
+    done
+}
+
+################################################################################
+# Purpose: read distrubution name (only for Debian and Ubuntu)
+# Returns: the distro name
+################################################################################
+get_distro()
+{
+  local code_name="$(lsb_release -c | awk '{ print $2 }')"
+  echo $code_name
+}
+
+################################################################################
+# Purpose: check if the actual distro is supported
+# Arguments:
+#   $1 -Z the list of supported distro
+# Returns: 
+#   true if supported
+#   false if not supported
+################################################################################
+check_supported_distro()
+{
+  local _supported="false"
+  local _actual_distro_name=$(get_distro)
+  local _distro
+  for _distro in $1
+    do
+      if [[ "$_actual_distro_name" =~ ^$_distro.* ]]; then
+        _supported="true"
+      fi
+    done
+  echo $_supported
+}
+
+
 init()
 {
   open_log
   WHOAMI=$(whoami)
   if [ "$WHOAMI" != "root" ]
   then
-    error "Pleae execute this script as root"
-    exit 1
+    exit_err "Pleae execute this script as root"
   fi
   if [ ! -d "${BUILD_PATH}/config" ]
   then
-    error "can't find configuration files in ${BUILD_PATH}/config"
+    exit_err "can't find configuration files in ${BUILD_PATH}/config"
     exit 1
   fi
+  _is_supported=$(check_supported_distro "$SUPPORTED_DISTRO_LIST")
+  if [ "$_is_supported" != "true" ]; then
+    exit_err "distro is not supported"
+  fi
+  check_required_packages "$REQUIRED_PACKAGES_LIST"
   log "$0 started."
   cd $BUILD_PATH
 }
@@ -384,11 +452,29 @@ cleancache_live()
  log "CLEAN-CACHE stage completed."
 }
 
+clean_iso()
+{
+  log "Starting CLEAN-ISO stage.."
+  if ls ${LIVE_NAME_PREFIX}*.iso > /dev/null 2>&1; then
+    rm ${LIVE_NAME_PREFIX}*.iso
+  fi
+  if ls ${LIVE_NAME_PREFIX}*.md5 > /dev/null 2>&1; then
+    rm ${LIVE_NAME_PREFIX}*.md5
+  fi
+  if ls ${LIVE_NAME_PREFIX}*.zsync > /dev/null 2>&1; then
+    rm ${LIVE_NAME_PREFIX}*zsync
+  fi
+  log "CLEAN-ISO stage completed."
+}
+
 main()
 {
   case "$STAGE" in
     "clean")
        clean_live
+       ;;
+    "cleaniso")
+       clean_iso
        ;;
     "cleancache")
        cleancache_live
@@ -396,6 +482,7 @@ main()
     "cleanall")
        clean_live
        cleancache_live
+       clean_iso
        ;;
     "config")
        config_live
@@ -407,6 +494,7 @@ main()
        ;;
     "all")
        clean_live
+       clean_iso
        config_live
        build_live
        ;;

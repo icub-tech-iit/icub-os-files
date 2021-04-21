@@ -28,3 +28,4 @@ liblua5.2-dev
 libeigen3-dev
 libreadline5
 portaudio19-dev
+libboost-system-dev
