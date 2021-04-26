@@ -417,13 +417,10 @@ build_live()
 clean_live()
 {
   log "Starting CLEAN-LIVE stage.."
-  TO_DELETE="config/hooks config/build config/binary config/bootstrap config/chroot config/common config/source config/includes.binary/VERSION config/includes.binary/README config/includes.binary/ChangeLog config/includes.binary/isolinux/splash.png config/includes.chroot/VERSION_PC104 $CONFIG_FILE"
+  TO_DELETE="config/apt  config/debian-installer config/includes config/includes.bootstrap config/includes.installer/ config/includes.source config/hooks config/build config/binary config/bootstrap config/chroot config/common config/source config/includes.binary/VERSION config/includes.binary/README config/includes.binary/ChangeLog config/includes.binary/isolinux/splash.png config/includes.chroot/VERSION_PC104 includes/packages includes/packages.binary includes/preseed includes/rootfs $CONFIG_FILE"
   for f in $TO_DELETE
   do
-    if [ -e "$f" ]
-    then
-      rm -rf $f
-    fi
+    find $f -type d -empty -delete
   done
 
   if [ "$DEBUG" != "" ]; then
