@@ -1,0 +1,6 @@
+
+EXTRA_CFLAGS = -Idrivers/
+
+obj-m := cfw002.o
+
+stk11xx-objs := cfw002.o

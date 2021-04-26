@@ -1,0 +1,394 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CFW002_AUDIO_SETGAIN	cfw002.h	42;"	d
+CFW002_CAN_EXTID	API/cfw002_api.h	26;"	d
+CFW002_CAN_GETSTATS	cfw002.h	43;"	d
+CFW002_CAN_IDSETFIL	cfw002.h	45;"	d
+CFW002_CAN_PORTENABLE	cfw002.h	46;"	d
+CFW002_CAN_READ	cfw002.h	40;"	d
+CFW002_CAN_RXSETFIL	cfw002.h	44;"	d
+CFW002_CAN_STATE_BUSOFF	API/cfw002_api.h	68;"	d
+CFW002_CAN_STATE_DISABLED	API/cfw002_api.h	72;"	d
+CFW002_CAN_STATE_HADWARNORBOFF	API/cfw002_api.h	70;"	d
+CFW002_CAN_STATE_WARN	API/cfw002_api.h	66;"	d
+CFW002_CAN_WRITE	cfw002.h	41;"	d
+CFW002_DEBUGFS_DIR	cfw002.h	32;"	d
+CFW002_DEBUGFS_DRVFILE	cfw002.h	34;"	d
+CFW002_DEBUGFS_FWFILE	cfw002.h	33;"	d
+CFW002_H	cfw002.h	15;"	d
+CFW002_HDR_SIZE	API/cfw002_api.h	85;"	d
+CFW002_HW_H	cfw002_hw.h	14;"	d
+CFW002_IOCTL_AUDIO_SETGAIN	API/cfw002_api.h	169;"	d
+CFW002_IOCTL_GETSTATE	API/cfw002_api.h	51;"	d
+CFW002_IOCTL_MAGIC	API/cfw002_api.h	73;"	d
+CFW002_IOCTL_MAGIC	cfw002.h	38;"	d
+CFW002_IOCTL_PORTENABLE	API/cfw002_api.h	83;"	d
+CFW002_IOCTL_READ	API/cfw002_api.h	81;"	d
+CFW002_IOCTL_SETFILTER	API/cfw002_api.h	110;"	d
+CFW002_IOCTL_SETIDFILTER	API/cfw002_api.h	135;"	d
+CFW002_IOCTL_WRITE	API/cfw002_api.h	82;"	d
+CFW002_MAJOR	API/cfw002_api.h	74;"	d
+CFW002_MAJOR	cfw002.h	30;"	d
+CFW002_NAME	cfw002.h	31;"	d
+CFW002_PAYLOAD_SIZE	API/cfw002_api.h	87;"	d
+CFW2_HAS_FILTERS	API/libcfw002.h	22;"	d
+CFWAUDIO_HANDLE	API/libcfw002.h	/^} CFWAUDIO_HANDLE;$/;"	t	typeref:struct:__CFWAUDIO_HANDLE
+CFWCAN_HANDLE	API/libcfw002.h	/^} CFWCAN_HANDLE;$/;"	t	typeref:struct:__CFWCAN_HANDLE
+CFWCAN_MSG	API/libcfw002.h	/^typedef struct cfw002_rtx_payload CFWCAN_MSG;$/;"	t	typeref:struct:cfw002_rtx_payload
+CFWCAN_STAT	API/libcfw002.h	/^typedef struct cfw002_errstate CFWCAN_STAT;$/;"	t	typeref:struct:cfw002_errstate
+CFW_BOOT_TIMEOUT	cfw002_hw.h	164;"	d
+CFW_CMD0	cfw002_hw.h	31;"	d
+CFW_CMD1	cfw002_hw.h	32;"	d
+CFW_CMD_DEBUG	cfw002_hw.h	66;"	d
+CFW_CMD_INTENABLE	cfw002_hw.h	53;"	d
+CFW_CMD_NONE	cfw002_hw.h	43;"	d
+CFW_CMD_PORTENABLE	cfw002_hw.h	64;"	d
+CFW_CMD_PREPARERXFILTERID	cfw002_hw.h	62;"	d
+CFW_CMD_PREPARERXFILTERMASK	cfw002_hw.h	61;"	d
+CFW_CMD_RTXENABLE	cfw002_hw.h	52;"	d
+CFW_CMD_SETAUDIOGAIN	cfw002_hw.h	54;"	d
+CFW_CMD_SETIDFILTER	cfw002_hw.h	63;"	d
+CFW_CMD_SETRXDMA0	cfw002_hw.h	49;"	d
+CFW_CMD_SETRXDMA1	cfw002_hw.h	55;"	d
+CFW_CMD_SETRXDMA2	cfw002_hw.h	56;"	d
+CFW_CMD_SETRXDMA3	cfw002_hw.h	57;"	d
+CFW_CMD_SETRXDMA4	cfw002_hw.h	58;"	d
+CFW_CMD_SETRXFILTER	cfw002_hw.h	60;"	d
+CFW_CMD_SETRXRINGSZ	cfw002_hw.h	51;"	d
+CFW_CMD_SETTXDMA0	cfw002_hw.h	44;"	d
+CFW_CMD_SETTXDMA1	cfw002_hw.h	45;"	d
+CFW_CMD_SETTXDMA2	cfw002_hw.h	46;"	d
+CFW_CMD_SETTXDMA3	cfw002_hw.h	47;"	d
+CFW_CMD_SETTXDMA4	cfw002_hw.h	48;"	d
+CFW_CMD_SETTXRINGSZ	cfw002_hw.h	50;"	d
+CFW_CMD_TIMEOUT	cfw002_hw.h	160;"	d
+CFW_CMD_TXISPEND	cfw002_hw.h	59;"	d
+CFW_DEV_FILE	API/libcfw002.h	24;"	d
+CFW_FIRMWARE_BIN	cfw002.h	35;"	d
+CFW_FLUSH_TIMEOUT	cfw002_hw.h	161;"	d
+CFW_FLUSH_TIMEOUT2	cfw002_hw.h	162;"	d
+CFW_HAS_DEBUGFS	cfw002.c	33;"	d	file:
+CFW_IGEN	cfw002_hw.h	29;"	d
+CFW_ISR	cfw002_hw.h	30;"	d
+CFW_PARAM0	cfw002_hw.h	33;"	d
+CFW_PARAM1	cfw002_hw.h	34;"	d
+CFW_PLX_LDOOR	cfw002_hw.h	25;"	d
+CFW_PLX_MBOX0	cfw002_hw.h	17;"	d
+CFW_PLX_MBOX1	cfw002_hw.h	18;"	d
+CFW_PLX_MBOX2	cfw002_hw.h	19;"	d
+CFW_PLX_MBOX3	cfw002_hw.h	20;"	d
+CFW_PLX_MBOX4	cfw002_hw.h	21;"	d
+CFW_PLX_MBOX5	cfw002_hw.h	22;"	d
+CFW_PLX_MBOX6	cfw002_hw.h	23;"	d
+CFW_PLX_MBOX7	cfw002_hw.h	24;"	d
+CFW_PLX_PDOOR	cfw002_hw.h	26;"	d
+CFW_SHM_BOOT_CHKSUM	cfw002_hw.h	165;"	d
+CFW_SHM_BOOT_FLAG	cfw002_hw.h	166;"	d
+CFW_SHM_BOOT_FLAG_BOOT	cfw002_hw.h	170;"	d
+CFW_SHM_BOOT_FLAG_MAGIC	cfw002_hw.h	168;"	d
+CFW_SHM_BOOT_FLAG_OK	cfw002_hw.h	169;"	d
+CFW_SHM_BOOT_FLAG_READY	cfw002_hw.h	167;"	d
+CFW_SHM_BOOT_IMAGE	cfw002_hw.h	171;"	d
+CFW_SHM_BOOT_LEN	cfw002_hw.h	172;"	d
+CFW_SHM_DEBUG	cfw002_hw.h	146;"	d
+CFW_SHM_RXCONS	cfw002_hw.h	144;"	d
+CFW_SHM_RXPROD	cfw002_hw.h	145;"	d
+CFW_SHM_STATS	cfw002_hw.h	147;"	d
+CFW_SHM_STAT_REC	cfw002_hw.h	148;"	d
+CFW_SHM_STAT_RXC	cfw002_hw.h	152;"	d
+CFW_SHM_STAT_RXOV	cfw002_hw.h	153;"	d
+CFW_SHM_STAT_STATE	cfw002_hw.h	150;"	d
+CFW_SHM_STAT_TEC	cfw002_hw.h	149;"	d
+CFW_SHM_STAT_TXC	cfw002_hw.h	151;"	d
+CFW_SHM_TXCONS	cfw002_hw.h	143;"	d
+CFW_SHM_TXPROD	cfw002_hw.h	142;"	d
+KSRC	Makefile	/^KSRC=\/lib\/modules\/$(KVER)\/build$/;"	m
+KVER	Makefile	/^KVER=$(shell uname -r)$/;"	m
+NUM	tests/test_cfwlib.c	7;"	d	file:
+NUM	tests/test_filter.c	7;"	d	file:
+NUM	tests/test_id_filter.c	7;"	d	file:
+NUM	tests/test_notblock.c	7;"	d	file:
+NUM	tests/test_rtx_stat.c	5;"	d	file:
+NUM	tests_old/test_multi.c	5;"	d	file:
+NUM	tests_old/test_rtx.c	5;"	d	file:
+NUM	tests_old/test_rtx_mt.c	5;"	d	file:
+NUM	tests_old/test_rtx_stat.c	5;"	d	file:
+NUM	tests_old/test_rx.c	5;"	d	file:
+NUM	tests_old/test_rx_stat.c	5;"	d	file:
+NUM	tests_old/test_rxblock.c	5;"	d	file:
+NUM	tests_old/test_tx.c	5;"	d	file:
+NUM	tests_old/test_tx_block.c	5;"	d	file:
+NUM	tests_old/test_tx_stat.c	5;"	d	file:
+PCI_ISR_RXERR1	cfw002_hw.h	77;"	d
+PCI_ISR_RXERR2	cfw002_hw.h	78;"	d
+PCI_ISR_RXOK1	cfw002_hw.h	72;"	d
+PCI_ISR_RXOK2	cfw002_hw.h	73;"	d
+PCI_ISR_RXOK_MASK1	cfw002_hw.h	68;"	d
+PCI_ISR_RXOK_MASK2	cfw002_hw.h	70;"	d
+PCI_ISR_TXERR	cfw002_hw.h	79;"	d
+PCI_ISR_TXOK1	cfw002_hw.h	74;"	d
+PCI_ISR_TXOK2	cfw002_hw.h	75;"	d
+PCI_ISR_TXOK_MASK1	cfw002_hw.h	69;"	d
+PCI_ISR_TXOK_MASK2	cfw002_hw.h	71;"	d
+PCI_VENDOR_ID_IIT	cfw002.h	28;"	d
+RX_DESC_NUM	cfw002_hw.h	158;"	d
+RX_DESC_SIZE	cfw002_hw.h	133;"	d
+TX_DESC_NUM	cfw002_hw.h	157;"	d
+TX_DESC_SIZE	cfw002_hw.h	132;"	d
+VERSION	cfw002.c	31;"	d	file:
+__CFW002API__	API/cfw002_api.h	2;"	d
+__CFWAUDIO_HANDLE	API/libcfw002.h	/^typedef struct __CFWAUDIO_HANDLE{$/;"	s
+__CFWCAN_HANDLE	API/libcfw002.h	/^typedef struct __CFWCAN_HANDLE{$/;"	s
+__LIBCFW2H__	API/libcfw002.h	2;"	d
+__devinitdata	cfw002.c	/^static struct pci_device_id cfw002_table[] __devinitdata = {$/;"	v	typeref:struct:cfw002_table	file:
+__this_module	cfw002.mod.c	/^struct module __this_module$/;"	v	typeref:struct:module
+__used	cfw002.mod.c	/^__used$/;"	v	file:
+__used	cfw002.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+_cfw002_close	cfw002.c	/^static int _cfw002_close(cfw002_priv *priv)$/;"	f	file:
+_cfw002_open	cfw002.c	/^static int _cfw002_open(cfw002_priv *priv)$/;"	f	file:
+audiorefcount	API/libcfw002.c	/^int audiorefcount = 0;$/;"	v
+block	API/cfw002_api.h	/^	__u8 block;$/;"	m	struct:cfw002_rtx_header
+block	cfw002_hw.h	/^	__u8 block;$/;"	m	struct:cfw002_header
+bufp	API/cfw002_api.h	/^	struct cfw002_rtx_payload *bufp; \/* array of payloads *\/$/;"	m	struct:cfw002_rtx_header	typeref:struct:cfw002_rtx_header::cfw002_rtx_payload
+bufp	cfw002_hw.h	/^	struct cfw002_rtxdesc *bufp;$/;"	m	struct:cfw002_header	typeref:struct:cfw002_header::cfw002_rtxdesc
+cdev	cfw002.h	/^	struct cdev cdev;$/;"	m	struct:cfw002_priv	typeref:struct:cfw002_priv::cdev
+cfw002_allocdesc	cfw002.c	/^static int cfw002_allocdesc(cfw002_priv *priv)$/;"	f	file:
+cfw002_audio_setgain	API/cfw002_api.h	/^static inline int cfw002_audio_setgain(int fd, unsigned char gain)$/;"	f
+cfw002_can_getstate	API/cfw002_api.h	/^static inline int cfw002_can_getstate(int fd, __u8 port, struct cfw002_errstate *ebuf)$/;"	f
+cfw002_can_portenable	API/cfw002_api.h	/^static inline int cfw002_can_portenable(int fd, int port, int ena) $/;"	f
+cfw002_can_read	API/cfw002_api.h	/^static inline int cfw002_can_read(int fd, struct cfw002_rtx_header *buf, int num)$/;"	f
+cfw002_can_setfilter	API/cfw002_api.h	/^static inline int cfw002_can_setfilter(int fd, int port, int extid, int mide, $/;"	f
+cfw002_can_setidfilter	API/cfw002_api.h	/^static inline int cfw002_can_setidfilter(int fd, unsigned int port, unsigned int id, int ena) $/;"	f
+cfw002_can_write	API/cfw002_api.h	/^static inline int cfw002_can_write(int fd, struct cfw002_rtx_header *buf, int num)$/;"	f
+cfw002_close	cfw002.c	/^int cfw002_close(struct inode *inode, struct file *filep)$/;"	f
+cfw002_debug_getfw	cfw002.c	/^static void cfw002_debug_getfw(struct cfw002_priv *priv)$/;"	f	file:
+cfw002_debugfs	cfw002.c	/^struct dentry *cfw002_debugfs;$/;"	v	typeref:struct:dentry
+cfw002_debugfs_close	cfw002.c	/^static int cfw002_debugfs_close(struct inode *inode, struct file *filep)$/;"	f	file:
+cfw002_debugfs_open	cfw002.c	/^static int cfw002_debugfs_open(struct inode *inode, struct file *filep)$/;"	f	file:
+cfw002_debugfs_ops	cfw002.c	/^static struct file_operations cfw002_debugfs_ops = {$/;"	v	typeref:struct:file_operations	file:
+cfw002_debugfs_read	cfw002.c	/^static int cfw002_debugfs_read(struct file *filp, char __user *buff, size_t count, loff_t *offp)$/;"	f	file:
+cfw002_driver	cfw002.c	/^static struct pci_driver cfw002_driver = {$/;"	v	typeref:struct:pci_driver	file:
+cfw002_errstate	API/cfw002_api.h	/^struct cfw002_errstate {$/;"	s
+cfw002_errstate	cfw002_hw.h	/^struct cfw002_errstate {$/;"	s
+cfw002_exit	cfw002.c	/^module_exit(cfw002_exit);$/;"	v
+cfw002_exit	cfw002.c	/^static void __exit cfw002_exit(void)$/;"	f	file:
+cfw002_filter	API/cfw002_api.h	/^struct cfw002_filter{$/;"	s
+cfw002_filter	cfw002.h	/^typedef struct cfw002_filter{$/;"	s
+cfw002_filter	cfw002.h	/^} cfw002_filter;$/;"	t	typeref:struct:cfw002_filter
+cfw002_firmwarecheck	cfw002.c	/^static int cfw002_firmwarecheck(cfw002_priv *priv)$/;"	f	file:
+cfw002_firmwareload	cfw002.c	/^static long cfw002_firmwareload(cfw002_priv *priv, const struct firmware *fw)$/;"	f	file:
+cfw002_get	cfw002.c	/^static inline int cfw002_get(cfw002_priv *priv, char __user *buf, int port, int max)$/;"	f	file:
+cfw002_getrxfullcount	cfw002.c	/^static inline int cfw002_getrxfullcount(cfw002_priv *priv, int port)$/;"	f	file:
+cfw002_gettxemptycount	cfw002.c	/^static inline int cfw002_gettxemptycount(cfw002_priv *priv, int port)$/;"	f	file:
+cfw002_header	cfw002_hw.h	/^struct cfw002_header{$/;"	s
+cfw002_idfilter	API/cfw002_api.h	/^struct cfw002_idfilter{$/;"	s
+cfw002_idfilter	cfw002.h	/^typedef struct cfw002_idfilter{$/;"	s
+cfw002_idfilter	cfw002.h	/^} cfw002_idfilter;$/;"	t	typeref:struct:cfw002_idfilter
+cfw002_init	cfw002.c	/^module_init(cfw002_init);$/;"	v
+cfw002_init	cfw002.c	/^static int __init cfw002_init(void)$/;"	f	file:
+cfw002_intenable	cfw002.c	/^static inline void cfw002_intenable(cfw002_priv *priv,unsigned int mask)$/;"	f	file:
+cfw002_interrupt	cfw002.c	/^static irqreturn_t cfw002_interrupt(int irq, void *_priv)$/;"	f	file:
+cfw002_ioctl	cfw002.c	/^int cfw002_ioctl(struct inode *inode, struct file *filep, $/;"	f
+cfw002_major	cfw002.c	/^int cfw002_major = CFW002_MAJOR;$/;"	v
+cfw002_open	cfw002.c	/^static int cfw002_open(struct inode *inode, struct file *filep)$/;"	f	file:
+cfw002_ops	cfw002.c	/^static struct file_operations cfw002_ops = {$/;"	v	typeref:struct:file_operations	file:
+cfw002_plxread16	cfw002.h	/^static inline u16 cfw002_plxread16(struct cfw002_priv *priv, int addr)$/;"	f
+cfw002_plxread32	cfw002.h	/^static inline u32 cfw002_plxread32(struct cfw002_priv *priv, int addr)$/;"	f
+cfw002_plxread8	cfw002.h	/^static inline u8 cfw002_plxread8(struct cfw002_priv *priv, int addr)$/;"	f
+cfw002_plxwrite16	cfw002.h	/^static inline void cfw002_plxwrite16(struct cfw002_priv *priv,$/;"	f
+cfw002_plxwrite32	cfw002.h	/^static inline void cfw002_plxwrite32(struct cfw002_priv *priv,$/;"	f
+cfw002_plxwrite8	cfw002.h	/^static inline void cfw002_plxwrite8(struct cfw002_priv *priv,$/;"	f
+cfw002_priv	cfw002.h	/^typedef struct cfw002_priv {$/;"	s
+cfw002_priv	cfw002.h	/^} cfw002_priv;$/;"	t	typeref:struct:cfw002_priv
+cfw002_probe	cfw002.c	/^static int __devinit cfw002_probe(struct pci_dev *pdev,$/;"	f	file:
+cfw002_remove	cfw002.c	/^static void __devexit cfw002_remove(struct pci_dev *pdev)$/;"	f	file:
+cfw002_resume	cfw002.c	/^static int cfw002_resume(struct pci_dev *pdev)$/;"	f	file:
+cfw002_rtx_header	API/cfw002_api.h	/^struct cfw002_rtx_header {$/;"	s
+cfw002_rtx_payload	API/cfw002_api.h	/^struct cfw002_rtx_payload {$/;"	s
+cfw002_rtx_status	API/cfw002_api.h	/^struct cfw002_rtx_status {$/;"	s
+cfw002_rtxdesc	cfw002_hw.h	/^struct cfw002_rtxdesc {$/;"	s
+cfw002_rx1	cfw002.c	/^static inline void cfw002_rx1(cfw002_priv *priv, int isr)$/;"	f	file:
+cfw002_rx2	cfw002.c	/^static inline void cfw002_rx2(cfw002_priv *priv, int isr)$/;"	f	file:
+cfw002_rxdesc	cfw002_hw.h	109;"	d
+cfw002_rxdescnum	cfw002.c	/^int cfw002_rxdescnum = RX_DESC_NUM;$/;"	v
+cfw002_sendcmd	cfw002.c	/^static int cfw002_sendcmd(cfw002_priv *priv, int n, int cmd, u32 param)$/;"	f	file:
+cfw002_sethwdesc	cfw002.c	/^static void cfw002_sethwdesc(cfw002_priv *priv)$/;"	f	file:
+cfw002_setidfilter	cfw002.c	/^static void cfw002_setidfilter(cfw002_priv *priv, int port, u16 id, int ena)$/;"	f	file:
+cfw002_setrxfilter	cfw002.c	/^static void cfw002_setrxfilter(cfw002_priv *priv, int port, int mide, int extid,$/;"	f	file:
+cfw002_suspend	cfw002.c	/^static int cfw002_suspend(struct pci_dev *pdev, pm_message_t state)$/;"	f	file:
+cfw002_tx	cfw002.c	/^static int cfw002_tx(cfw002_priv *priv, char __user *buf, int port)$/;"	f	file:
+cfw002_txdesc	cfw002_hw.h	/^struct cfw002_txdesc {$/;"	s
+cfw002_txdescnum	cfw002.c	/^int cfw002_txdescnum = TX_DESC_NUM;$/;"	v
+cfw002_txflush	cfw002.c	/^static void cfw002_txflush(cfw002_priv *priv)$/;"	f	file:
+cfw002_txflush_port	cfw002.c	/^static void cfw002_txflush_port(cfw002_priv *priv, int port)$/;"	f	file:
+cfw002_txok1	cfw002.c	/^static inline void cfw002_txok1(cfw002_priv *priv,int isr)$/;"	f	file:
+cfw002_txok2	cfw002.c	/^static inline void cfw002_txok2(cfw002_priv *priv,int isr)$/;"	f	file:
+cfw002_xc1read16	cfw002.h	/^static inline u16 cfw002_xc1read16(struct cfw002_priv *priv,  int addr)$/;"	f
+cfw002_xc1read32	cfw002.h	/^static inline u32 cfw002_xc1read32(struct cfw002_priv *priv,  int addr)$/;"	f
+cfw002_xc1read8	cfw002.h	/^static inline u8 cfw002_xc1read8(struct cfw002_priv *priv,  int addr)$/;"	f
+cfw002_xc1write16	cfw002.h	/^static inline void cfw002_xc1write16(struct cfw002_priv *priv,$/;"	f
+cfw002_xc1write32	cfw002.h	/^static inline void cfw002_xc1write32(struct cfw002_priv *priv,$/;"	f
+cfw002_xc1write8	cfw002.h	/^static inline void cfw002_xc1write8(struct cfw002_priv *priv,$/;"	f
+cfw002_xc2read16	cfw002.h	/^static inline u16 cfw002_xc2read16(struct cfw002_priv *priv, int addr)$/;"	f
+cfw002_xc2read32	cfw002.h	/^static inline u32 cfw002_xc2read32(struct cfw002_priv *priv,  int addr)$/;"	f
+cfw002_xc2read8	cfw002.h	/^static inline u8 cfw002_xc2read8(struct cfw002_priv *priv,  int addr)$/;"	f
+cfw002_xc2write16	cfw002.h	/^static inline void cfw002_xc2write16(struct cfw002_priv *priv,$/;"	f
+cfw002_xc2write32	cfw002.h	/^static inline void cfw002_xc2write32(struct cfw002_priv *priv,$/;"	f
+cfw002_xc2write8	cfw002.h	/^static inline void cfw002_xc2write8(struct cfw002_priv *priv,$/;"	f
+cfwAudioClose	API/libcfw002.c	/^int cfwAudioClose(CFWAUDIO_HANDLE *ah)$/;"	f
+cfwAudioOpen	API/libcfw002.c	/^int cfwAudioOpen(CFWAUDIO_HANDLE *ah)$/;"	f
+cfwAudioSetGain	API/libcfw002.c	/^int cfwAudioSetGain(CFWAUDIO_HANDLE *ah, int gain)$/;"	f
+cfwCanClose	API/libcfw002.c	/^int cfwCanClose(CFWCAN_HANDLE h)$/;"	f
+cfwCanOpen	API/libcfw002.c	/^int cfwCanOpen(int networkN, int txQSize, int rxQSize, int txTimeout, int rxTimeout, CFWCAN_HANDLE *h)$/;"	f
+cfwCanRead	API/libcfw002.c	/^int cfwCanRead(CFWCAN_HANDLE h, CFWCAN_MSG *rb, unsigned int *m, int block)$/;"	f
+cfwCanRtxDisable	API/libcfw002.c	/^int cfwCanRtxDisable(CFWCAN_HANDLE h)$/;"	f
+cfwCanRtxEnable	API/libcfw002.c	/^int cfwCanRtxEnable(CFWCAN_HANDLE h)$/;"	f
+cfwCanSetFilter	API/libcfw002.c	/^int cfwCanSetFilter(CFWCAN_HANDLE h, int mide, int extid, unsigned long mask, unsigned long id)$/;"	f
+cfwCanSetIdFilter	API/libcfw002.c	/^int cfwCanSetIdFilter(CFWCAN_HANDLE h, unsigned int id, int ena)$/;"	f
+cfwCanStat	API/libcfw002.c	/^int cfwCanStat(CFWCAN_HANDLE h, CFWCAN_STAT *sb)$/;"	f
+cfwCanWrite	API/libcfw002.c	/^int cfwCanWrite(CFWCAN_HANDLE h, CFWCAN_MSG *wb, unsigned int *l, int block)$/;"	f
+cmd_sem	cfw002.h	/^	struct semaphore cmd_sem[2];$/;"	m	struct:cfw002_priv	typeref:struct:cfw002_priv::semaphore
+critical_section	API/libcfw002.c	/^static pthread_mutex_t critical_section=PTHREAD_MUTEX_INITIALIZER;$/;"	v	file:
+data	API/cfw002_api.h	/^	__u8 data[8];	\/* payload data*\/$/;"	m	struct:cfw002_rtx_payload
+data	cfw002_hw.h	/^	u8 data[8];$/;"	m	struct:cfw002_rtxdesc
+data	cfw002_hw.h	/^	u8 data[8];$/;"	m	struct:cfw002_txdesc
+debugfs	cfw002.h	/^	struct dentry *debugfs;$/;"	m	struct:cfw002_priv	typeref:struct:cfw002_priv::dentry
+debugfs_data	cfw002.h	/^	char *debugfs_data;$/;"	m	struct:cfw002_priv
+debugfs_fw	cfw002.h	/^	struct dentry *debugfs_fw;$/;"	m	struct:cfw002_priv	typeref:struct:cfw002_priv::dentry
+debugfs_num	cfw002.h	/^	int debugfs_num;$/;"	m	struct:cfw002_priv
+dev	cfw002.h	/^	dev_t dev;$/;"	m	struct:cfw002_priv
+dev_available	cfw002.h	/^	atomic_t dev_available;$/;"	m	struct:cfw002_priv
+ena	API/cfw002_api.h	/^	int ena;$/;"	m	struct:cfw002_idfilter
+ena	cfw002.h	/^	int ena;$/;"	m	struct:cfw002_idfilter
+extid	API/cfw002_api.h	/^	int extid;$/;"	m	struct:cfw002_filter
+extid	cfw002.h	/^	int extid;$/;"	m	struct:cfw002_filter
+fd	API/libcfw002.c	/^int fd = -1;$/;"	v
+gain	API/libcfw002.h	/^    int gain;$/;"	m	struct:__CFWAUDIO_HANDLE
+id	API/cfw002_api.h	/^	__le32 id; 	\/* 11-bit or 29-bit ID*\/$/;"	m	struct:cfw002_rtx_payload
+id	API/cfw002_api.h	/^	unsigned int id;$/;"	m	struct:cfw002_idfilter
+id	API/cfw002_api.h	/^	unsigned long id;$/;"	m	struct:cfw002_filter
+id	cfw002.h	/^	unsigned int id;$/;"	m	struct:cfw002_idfilter
+id	cfw002.h	/^	unsigned long id;$/;"	m	struct:cfw002_filter
+id	cfw002_hw.h	/^	__le32 id;$/;"	m	struct:cfw002_rtxdesc
+id	cfw002_hw.h	/^	__le32 id;$/;"	m	struct:cfw002_txdesc
+init_MUTEX	cfw002.h	23;"	d
+init_MUTEX	cfw002.h	24;"	d
+len	API/cfw002_api.h	/^	__le16 len;	\/* packet lenght. The 16bit type is for performace\/alignment reasons *\/$/;"	m	struct:cfw002_rtx_payload
+len	cfw002_hw.h	/^	__le16 len;$/;"	m	struct:cfw002_rtxdesc
+len	cfw002_hw.h	/^	__le16 len;$/;"	m	struct:cfw002_txdesc
+lock	cfw002.h	/^	spinlock_t lock;$/;"	m	struct:cfw002_priv
+main	tests/test_audio.c	/^int main(int argc, char *argv[])$/;"	f
+main	tests/test_cfwlib.c	/^int main()$/;"	f
+main	tests/test_filter.c	/^int main()$/;"	f
+main	tests/test_id_filter.c	/^int main()$/;"	f
+main	tests/test_notblock.c	/^int main()$/;"	f
+main	tests/test_rtx_stat.c	/^int main()$/;"	f
+main	tests_old/loop_test.c	/^int main()$/;"	f
+main	tests_old/test_audio.c	/^int main(int argc, char *argv[])$/;"	f
+main	tests_old/test_multi.c	/^int main()$/;"	f
+main	tests_old/test_rtx.c	/^int main()$/;"	f
+main	tests_old/test_rtx_mt.c	/^int main()$/;"	f
+main	tests_old/test_rtx_stat.c	/^int main()$/;"	f
+main	tests_old/test_rx.c	/^int main()$/;"	f
+main	tests_old/test_rx_stat.c	/^int main()$/;"	f
+main	tests_old/test_rxblock.c	/^int main()$/;"	f
+main	tests_old/test_rxloss.c	/^int main()$/;"	f
+main	tests_old/test_tx.c	/^int main()$/;"	f
+main	tests_old/test_tx_block.c	/^int main()$/;"	f
+main	tests_old/test_tx_stat.c	/^int main()$/;"	f
+map	cfw002.h	/^	void __iomem *map[3];$/;"	m	struct:cfw002_priv
+mask	API/cfw002_api.h	/^	unsigned long mask;$/;"	m	struct:cfw002_filter
+mask	cfw002.h	/^	unsigned long mask;$/;"	m	struct:cfw002_filter
+mide	API/cfw002_api.h	/^	int mide;$/;"	m	struct:cfw002_filter
+mide	cfw002.h	/^	int mide;$/;"	m	struct:cfw002_filter
+num	API/cfw002_api.h	/^	__u16 num;$/;"	m	struct:cfw002_rtx_status
+pad	cfw002_hw.h	/^	u16 pad;$/;"	m	struct:cfw002_txdesc
+pdev	cfw002.h	/^	struct pci_dev *pdev;$/;"	m	struct:cfw002_priv	typeref:struct:cfw002_priv::pci_dev
+plx_can_tx_pend	debug.h	/^	s16 plx_can_tx_pend[5];		\/* flag for can TX in progress *\/$/;"	m	struct:tDebugData
+plx_cmd_isr	debug.h	/^	u32 plx_cmd_isr;		\/* local ISR flag for host command *\/$/;"	m	struct:tDebugData
+plx_cmd_reg	debug.h	/^	s16 plx_cmd_reg; 		\/* posinter to local CMD read reg *\/$/;"	m	struct:tDebugData
+plx_dma_cnt_reg	debug.h	/^	s16 plx_dma_cnt_reg;		\/* posinter to local DMA sz reg *\/$/;"	m	struct:tDebugData
+plx_dma_desc_reg	debug.h	/^	s16 plx_dma_desc_reg;	 	\/* pointer to local DMA descriptor reg *\/$/;"	m	struct:tDebugData
+plx_dma_isr	debug.h	/^	u32 plx_dma_isr;		\/* local ISR flag for dma completed *\/$/;"	m	struct:tDebugData
+plx_dma_ladr_reg	debug.h	/^	s16 plx_dma_ladr_reg;		\/* posinter to local DMA local adr reg *\/$/;"	m	struct:tDebugData
+plx_dma_pciadr_reg	debug.h	/^	s16 plx_dma_pciadr_reg;		\/* posinter to local DMA PCI adr reg *\/$/;"	m	struct:tDebugData
+plx_dma_pend	debug.h	/^	s16 plx_dma_pend;		\/* flag\/enumerator for dma channel in use. When TX n means dma on ring n-1 *\/$/;"	m	struct:tDebugData
+plx_dma_pend_direction	debug.h	/^	s16 plx_dma_pend_direction;	\/* flag for DMA direction *\/$/;"	m	struct:tDebugData
+plx_dma_rr	debug.h	/^	s16 plx_dma_rr;			\/* flag for dma RTX round robin *\/$/;"	m	struct:tDebugData
+plx_dma_rx_rr	debug.h	/^	s16 plx_dma_rx_rr;		\/* counter for dma RX round robin *\/$/;"	m	struct:tDebugData
+plx_dma_stacmd_clear	debug.h	/^	u16 plx_dma_stacmd_clear;	\/* Val to write on DMA status\/command reg to clear DMA s16 *\/$/;"	m	struct:tDebugData
+plx_dma_stacmd_start	debug.h	/^	u16 plx_dma_stacmd_start;	\/* Val to write on DMA status\/command reg to start DMA*\/$/;"	m	struct:tDebugData
+plx_dma_tx_rr	debug.h	/^	s16 plx_dma_tx_rr;		\/* counter for dma TX round robin *\/$/;"	m	struct:tDebugData
+plx_idx_mask	debug.h	/^	u32 plx_idx_mask;		\/* local doorbell bits that this cpu is allowed to clear *\/$/;"	m	struct:tDebugData
+plx_int_rx_full	debug.h	/^	u32 plx_int_rx_full;		\/* PCI isr flag for rx overflow *\/$/;"	m	struct:tDebugData
+plx_int_rx_ok	debug.h	/^	u32 plx_int_rx_ok;		\/* PCI isr flag for rx ok *\/$/;"	m	struct:tDebugData
+plx_int_tx_ok	debug.h	/^	u32 plx_int_tx_ok;		\/* PCI isr flag for tx ok *\/$/;"	m	struct:tDebugData
+plx_param_reg	debug.h	/^	s16 plx_param_reg;		\/* posinter to local CMD PARAM reg *\/$/;"	m	struct:tDebugData
+plx_pci_int_mask	debug.h	/^	u32 plx_pci_int_mask;$/;"	m	struct:tDebugData
+plx_pci_rx_sz	debug.h	/^	u16 plx_pci_rx_sz;		\/* number of RX descriptors *\/$/;"	m	struct:tDebugData
+plx_pci_tx_sz	debug.h	/^	u16 plx_pci_tx_sz;		\/* number of TX descriptors *\/$/;"	m	struct:tDebugData
+plx_rtx_ena	debug.h	/^	u16 plx_rtx_ena;$/;"	m	struct:tDebugData
+plx_rtx_idx_shift	debug.h	/^	s16 plx_rtx_idx_shift;		\/* shift for local to PCI interrupt status *\/$/;"	m	struct:tDebugData
+plx_rx_can_wakereq	debug.h	/^	s16 plx_rx_can_wakereq[5];	\/* flag for can RX awake queue request needed *\/$/;"	m	struct:tDebugData
+plx_rx_cons_idx	debug.h	/^	u16 plx_rx_cons_idx[5];		\/* host (consumer) RX idx (descriptors are available for RX up to this)*\/$/;"	m	struct:tDebugData
+plx_rx_cons_idx_shm	debug.h	/^	u32 plx_rx_cons_idx_shm;	\/* shared memory addr for consumer RX ptr pool *\/$/;"	m	struct:tDebugData
+plx_rx_core_idx	debug.h	/^	s16 plx_rx_core_idx[5];		\/* the RX SHM has been written up to this *\/$/;"	m	struct:tDebugData
+plx_rx_dma	debug.h	/^	u32 plx_rx_dma[5];$/;"	m	struct:tDebugData
+plx_rx_dma_local_idx	debug.h	/^	s16 plx_rx_dma_local_idx[5];	\/* the local RX dma pointer is here *\/$/;"	m	struct:tDebugData
+plx_rx_dma_pci_idx	debug.h	/^	s16 plx_rx_dma_pci_idx[5];	\/* the pci RX dma pointer is here *\/$/;"	m	struct:tDebugData
+plx_rx_dma_pend	debug.h	/^	s16 plx_rx_dma_pend;$/;"	m	struct:tDebugData
+plx_rx_dma_shm	debug.h	/^	u32 plx_rx_dma_shm;		\/* shared memory full addr for RX DMA *\/$/;"	m	struct:tDebugData
+plx_rx_prod_idx_shm	debug.h	/^	u32 plx_rx_prod_idx_shm;	\/* shared memory addr for producer RX ptr pool *\/$/;"	m	struct:tDebugData
+plx_tx_can_idx	debug.h	/^	u16 plx_tx_can_idx[5];		\/* the can has been feed up to this *\/	$/;"	m	struct:tDebugData
+plx_tx_cons_idx_shm	debug.h	/^	u32 plx_tx_cons_idx_shm;	\/* shared memory addr for consumer TX ptr pool *\/$/;"	m	struct:tDebugData
+plx_tx_dma	debug.h	/^	u32 plx_tx_dma[5];$/;"	m	struct:tDebugData
+plx_tx_dma_local_idx	debug.h	/^	u16 plx_tx_dma_local_idx[5];	\/* the local TX pointer for DMA request is here *\/$/;"	m	struct:tDebugData
+plx_tx_dma_pci_idx	debug.h	/^	u16 plx_tx_dma_pci_idx[5];	\/* the pci TX dma local pointer is here *\/$/;"	m	struct:tDebugData
+plx_tx_dma_pend	debug.h	/^	s16 plx_tx_dma_pend;$/;"	m	struct:tDebugData
+plx_tx_dma_shm	debug.h	/^	u32 plx_tx_dma_shm;		\/* shared memory full addr for TX DMA *\/$/;"	m	struct:tDebugData
+plx_tx_local_ready_idx	debug.h	/^	u16 plx_tx_local_ready_idx[5];	\/* the local TX pointer for DMA completed is here *\/$/;"	m	struct:tDebugData
+plx_tx_prod_idx	debug.h	/^	u16 plx_tx_prod_idx[5];		\/* the host wrote TX pkts up to this *\/$/;"	m	struct:tDebugData
+plx_tx_prod_idx_shm	debug.h	/^	u32 plx_tx_prod_idx_shm;	\/* shared memory addr for producer TX ptr pool *\/$/;"	m	struct:tDebugData
+plx_tx_queue_isfull	debug.h	/^	s16 plx_tx_queue_isfull[5];	\/* this flag is set to 1 if the TX queue is full *\/$/;"	m	struct:tDebugData
+port	API/cfw002_api.h	/^	__u8 port;$/;"	m	struct:cfw002_rtx_header
+port	API/cfw002_api.h	/^	int port;$/;"	m	struct:cfw002_filter
+port	API/cfw002_api.h	/^	unsigned int port;$/;"	m	struct:cfw002_idfilter
+port	API/libcfw002.h	/^    int port;$/;"	m	struct:__CFWCAN_HANDLE
+port	cfw002.h	/^	int port;$/;"	m	struct:cfw002_filter
+port	cfw002.h	/^	unsigned int port;$/;"	m	struct:cfw002_idfilter
+port	cfw002_hw.h	/^	__u8 port;$/;"	m	struct:cfw002_header
+port_ena	cfw002.h	/^	int port_ena[10];$/;"	m	struct:cfw002_priv
+portrefcount	API/libcfw002.c	/^int portrefcount[10] = {0,0,0,0,0,0,0,0,0,0};$/;"	v
+rec	API/cfw002_api.h	/^	__le16 rec; 	\/* receive error count *\/$/;"	m	struct:cfw002_errstate
+rec	cfw002_hw.h	/^	__le16 rec;$/;"	m	struct:cfw002_errstate
+rx_block_sem	cfw002.h	/^	struct semaphore rx_block_sem[10];$/;"	m	struct:cfw002_priv	typeref:struct:cfw002_priv::semaphore
+rx_cfg_sem	cfw002.h	/^	struct semaphore rx_cfg_sem;$/;"	m	struct:cfw002_priv	typeref:struct:cfw002_priv::semaphore
+rx_num	cfw002.h	/^	int rx_num[10];$/;"	m	struct:cfw002_priv
+rx_sem	cfw002.h	/^	struct semaphore rx_sem[10];$/;"	m	struct:cfw002_priv	typeref:struct:cfw002_priv::semaphore
+rx_wq	cfw002.h	/^	wait_queue_head_t rx_wq[10];$/;"	m	struct:cfw002_priv
+rxbuf	cfw002.h	/^ 	struct cfw002_rxdesc *rxbuf[10];$/;"	m	struct:cfw002_priv	typeref:struct:cfw002_priv::cfw002_rxdesc
+rxc	API/cfw002_api.h	/^	__le16 rxc;	\/* received packets count *\/$/;"	m	struct:cfw002_errstate
+rxc	cfw002_hw.h	/^	__le16 rxc;$/;"	m	struct:cfw002_errstate
+rxdma	cfw002.h	/^	u32 rxdma[10];$/;"	m	struct:cfw002_priv
+rxidx	cfw002.h	/^	int rxidx[10];$/;"	m	struct:cfw002_priv
+rxov	API/cfw002_api.h	/^	__le16 rxov;	\/* RX fifo overflow count *\/$/;"	m	struct:cfw002_errstate
+rxov	cfw002_hw.h	/^	__le16 rxov;$/;"	m	struct:cfw002_errstate
+rxprod	cfw002.h	/^	int rxprod[10];$/;"	m	struct:cfw002_priv
+state	API/cfw002_api.h	/^	__le16 state; 	\/* bitmask: port state *\/$/;"	m	struct:cfw002_errstate
+state	cfw002_hw.h	/^	__le16 state;$/;"	m	struct:cfw002_errstate
+tDebugData	debug.h	/^typedef struct tDebugData{$/;"	s
+tDebugData	debug.h	/^} __attribute__((packed)) tDebugData;$/;"	t	typeref:struct:tDebugData
+tec	API/cfw002_api.h	/^	__le16 tec; 	\/* transmit error count *\/$/;"	m	struct:cfw002_errstate
+tec	cfw002_hw.h	/^	__le16 tec;$/;"	m	struct:cfw002_errstate
+tx_sem	cfw002.h	/^	struct semaphore tx_sem[10];$/;"	m	struct:cfw002_priv	typeref:struct:cfw002_priv::semaphore
+tx_wq	cfw002.h	/^	wait_queue_head_t tx_wq[10];$/;"	m	struct:cfw002_priv
+txbuf	cfw002.h	/^	struct cfw002_txdesc *txbuf[10];$/;"	m	struct:cfw002_priv	typeref:struct:cfw002_priv::cfw002_txdesc
+txc	API/cfw002_api.h	/^	__le16 txc;	\/* transmitted (submitted to CAN module) packets count *\/$/;"	m	struct:cfw002_errstate
+txc	cfw002_hw.h	/^	__le16 txc;$/;"	m	struct:cfw002_errstate
+txcons	cfw002.h	/^	int txcons[10];$/;"	m	struct:cfw002_priv
+txdma	cfw002.h	/^	u32 txdma[10];$/;"	m	struct:cfw002_priv
+txidx	cfw002.h	/^	int txidx[10];$/;"	m	struct:cfw002_priv
