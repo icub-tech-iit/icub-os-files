@@ -417,10 +417,26 @@ build_live()
 clean_live()
 {
   log "Starting CLEAN-LIVE stage.."
-  TO_DELETE="config/apt  config/debian-installer config/includes config/includes.bootstrap config/includes.installer/ config/includes.source config/hooks config/build config/binary config/bootstrap config/chroot config/common config/source config/includes.binary/VERSION config/includes.binary/README config/includes.binary/ChangeLog config/includes.binary/isolinux/splash.png config/includes.chroot/VERSION_PC104 includes/packages includes/packages.binary includes/preseed includes/rootfs $CONFIG_FILE"
-  for f in $TO_DELETE
+  PATH_TO_DELETE="config/hooks"
+  DIR_TO_DELETE="config/apt config/debian-installer config/includes config/includes.bootstrap config/includes.installer/ config/includes.source includes/packages includes/packages.binary includes/preseed includes/rootfs"
+  FILES_TO_DELETE="config/source config/chroot config/common config/bootstrap config/binary config/build config/includes.binary/VERSION config/includes.binary/README config/includes.binary/ChangeLog config/includes.binary/isolinux/splash.png config/includes.chroot/VERSION_PC104 includes/packages includes/packages.binary includes/preseed includes/rootfs $CONFIG_FILE"
+  for _file in $FILES_TO_DELETE
   do
-    find $f -type d -empty -delete
+    if [ -e "$_file" ]; then
+      rm $_file
+    fi
+  done
+  for _dir in $DIR_TO_DELETE
+  do
+    if [ -e "$_dir" ]; then
+      rmdir --ignore-fail-on-non-empty $_dir
+    fi
+  done
+  for _path in $PATH_TO_DELETE
+  do
+    if [ -e "$_path" ]; then
+      rm -r $_path
+    fi
   done
 
   if [ "$DEBUG" != "" ]; then
