@@ -1,7 +1,10 @@
-KVER=$(shell uname -r)
+KVER ?= $(shell uname -r)
 TESTS_INSTALL_PATH=/lib/modules/$(KVER)/iCubDrivers/cfw002/LinuxDriver/tests
 
 all: test_cfwlib test_filter test_audio test_notblock test_id_filter
+
+test:
+	echo "bulding for target $(KVER)"
 
 test_cfwlib: test_cfwlib.c
 	gcc test_cfwlib.c -O2 -o test_cfwlib -lcfw002           -I../API/ -L../API/

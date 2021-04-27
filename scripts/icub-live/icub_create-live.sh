@@ -8,7 +8,7 @@
 #
 # AUTHOR : Matteo Brunettini <matteo.brunettini@iit.it>
 #
-# LATEST MODIFICATION DATE (2021-04-21):
+# LATEST MODIFICATION DATE (2021-04-26):
 #
 SCRIPT_VERSION="1.20.0"          # Sets version variable
 #

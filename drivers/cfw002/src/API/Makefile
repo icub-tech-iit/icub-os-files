@@ -1,4 +1,4 @@
-KVER=$(shell uname -r)
+KVER ?= $(shell uname -r)
 LIB_NAME=libcfw002
 LIB_TARGET=$(LIB_NAME).so
 LIB_OBJ=$(LIB_NAME).o
@@ -6,6 +6,9 @@ LIB_HEADER=$(LIB_NAME).h
 LIB_SOURCE=$(LIB_NAME).c
 API_HEADER=cfw002_api.h
 API_INSTALL_PATH=/lib/modules/$(KVER)/iCubDrivers/cfw002/LinuxDriver/API
+
+test:
+	echo "bulding for target $(KVER)"
 
 all: libcfw002.o
 	ld -shared -soname $(LIB_TARGET) -o $(LIB_TARGET) -lc $(LIB_OBJ)

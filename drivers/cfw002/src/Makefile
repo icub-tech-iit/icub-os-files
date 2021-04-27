@@ -1,8 +1,8 @@
 all:
-	cd firmware && $(MAKE)
-	cd API && $(MAKE)
-	cd module && $(MAKE)
-	cd tests && $(MAKE)
+	cd firmware && $(MAKE) all
+	cd API && $(MAKE) all
+	cd module && $(MAKE) all
+	cd tests && $(MAKE) all
 
 clean:
 	cd firmware && $(MAKE) clean

@@ -29,3 +29,4 @@ libeigen3-dev
 libreadline5
 portaudio19-dev
 libboost-system-dev
+linux-headers-rt-amd64
