@@ -44,7 +44,7 @@ LIVE_TIMEZONE="Europe/Rome"
 LIVE_MODE="debian"
 INSTALLER="live"
 BOOTAPPEND="boot=live config quickreboot noeject net.ifnames=0 biosdevname=0 persistence"
-VERSION="7.10-$(date  +%y.%m.%d)"
+VERSION="7.10-$(date  +%y%m%d)"
 LIVE_NAME_PREFIX="icub-live_"
 if [ "$FLAVOUR" == "" ]
 then

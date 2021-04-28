@@ -1,10 +1,8 @@
 KVER ?= $(shell uname -r)
+INSTALL_PREFIX ?=
 TESTS_INSTALL_PATH=/lib/modules/$(KVER)/iCubDrivers/cfw002/LinuxDriver/tests
 
 all: test_cfwlib test_filter test_audio test_notblock test_id_filter
-
-test:
-	echo "bulding for target $(KVER)"
 
 test_cfwlib: test_cfwlib.c
 	gcc test_cfwlib.c -O2 -o test_cfwlib -lcfw002           -I../API/ -L../API/
@@ -25,8 +23,8 @@ clean:
 	rm -f test_id_filter
 
 install: test_audio
-	mkdir -p $(TESTS_INSTALL_PATH)
-	cp test_audio $(TESTS_INSTALL_PATH)/
+	mkdir -p $(INSTALL_PREFIX)$(TESTS_INSTALL_PATH)
+	cp test_audio $(INSTALL_PREFIX)$(TESTS_INSTALL_PATH)/
 
 uninstall:
-	-rm -rf $(TESTS_INSTALL_PATH)
+	-rm -rf $(INSTALL_PREFIX)$(TESTS_INSTALL_PATH)

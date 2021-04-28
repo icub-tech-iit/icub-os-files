@@ -1,0 +1,9 @@
+INSTALL_PREFIX ?=
+RC-ICUB_PATH = /etc/rc.iCub.d
+LOAD_SCRIPT = S20_cfw002.sh
+
+install: $(LOAD_SCRIPT)
+	cp $(LOAD_SCRIPT) $(INSTALL_PREFIX)$(RC-ICUB_PATH)/
+
+uninstall:
+	rm -rf $(INSTALL_PREFIX)$(RC-ICUB_PATH)/$(LOAD_SCRIPT)

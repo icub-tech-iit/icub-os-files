@@ -15,9 +15,11 @@ install:
 	cd API && $(MAKE) install
 	cd module && $(MAKE) install
 	cd tests && $(MAKE) install
+	cd load_script && $(MAKE) install
 
 uninstall:
 	cd firmware && $(MAKE) uninstall
 	cd API && $(MAKE) uninstall
 	cd module && $(MAKE) uninstall
 	cd tests && $(MAKE) uninstall
+	cd load_script && $(MAKE) uninstall
