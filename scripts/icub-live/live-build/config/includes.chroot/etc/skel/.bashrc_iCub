@@ -1,41 +1,58 @@
-# .bashrc_iCub
-# setup the iCub enviroment
-if [ "$PS1" ]; then 
+#===============================================================================
+# Title:        bashrc_iCub.sh
+# Description:  this is the iCub enviroment file - SUPERBUILD version for PC104
+# Date:         2021-MAR-02
+# Usage:        source bashrc_iCub.sh
+#===============================================================================
+if [ "$PS1" ]; then
   echo "Setting up yarp and iCub env vars"
 fi
 # YARP and iCub enviroment variables
 export ROBOT_CODE=/usr/local/src/robot
-export ICUBcontrib_DIR=$ROBOT_CODE/iCubContrib
-export YARP_ROOT=$ROBOT_CODE/yarp
-export ICUB_ROOT=${ROBOT_CODE}/icub-main
-export ICUB_BUILD_PATHNAME="build-pc104"
-if [ "$ICUB_BUILD_PATHNAME" != "" ]; then
- export YARP_DIR=${YARP_ROOT}/${ICUB_BUILD_PATHNAME}
- export ICUB_DIR=${ICUB_ROOT}/${ICUB_BUILD_PATHNAME}
- export icub_firmware_shared_DIR=${ROBOT_CODE}/icub-firmware-shared/${ICUB_BUILD_PATHNAME}
- export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${ROBOT_CODE}/icub-tests/suits/${ICUB_BUILD_PATHNAME}/plugin
+# Set the name of build path here
+export ROBOTOLOGY_SUPERBUILD_SOURCE_DIR=${ROBOT_CODE}/robotology-superbuild
+export YARP_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/src/YARP
+export ICUB_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/src/ICUB
+export icub_firmware_shared_SOURCE_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/src/icub_firmware_shared
+export ICUBcontrib_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/src/icub-contrib-common
+
+# Change the name of build path here, according to your needs
+export OBJ_SUBDIR="build-pc104"
+if [ "$OBJ_SUBDIR" != "" ]; then
+  # Project-specific variables
+  export ROBOTOLOGY_SUPERBUILD_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_SOURCE_DIR}/${OBJ_SUBDIR}
+  export ROBOTOLOGY_SUPERBUILD_INSTALL_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/install
+  export YARP_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/YARP
+  export ICUB_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/ICUB
+  export icub_firmware_shared_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/icub_firmware_shared
+  export ICUBcontrib_BUILD_DIR=${ROBOTOLOGY_SUPERBUILD_BUILD_DIR}/src/ICUBcontrib
+  # Source the enviroment variables needed by the superbuild
+  if [ -f ${ROBOTOLOGY_SUPERBUILD_INSTALL_DIR}/share/robotology-superbuild/setup.sh ]; then
+    source ${ROBOTOLOGY_SUPERBUILD_INSTALL_DIR}/share/robotology-superbuild/setup.sh
+  fi
 fi
-export YARP_DATA_DIRS=${YARP_DIR}/share/yarp:${ICUB_DIR}/share/iCub:${ICUBcontrib_DIR}/share/ICUBcontrib:${ROBOT_CODE}/icub-tests/suits
+
+# To enable tab completion on yarp port names
+if [ -f ${YARP_SOURCE_DIR}/data/bash-completion/yarp ]; then
+  source ${YARP_SOURCE_DIR}/data/bash-completion/yarp
+fi
+
 # Set the name of your robot here.
-# Please change also the root user password
- export YARP_ROBOT_NAME=
- if [ "$YARP_ROBOT_NAME" = "" ] && [ -f "${ROBOT_CODE}/yarp_robot_name.txt" ]
- then
-   export YARP_ROBOT_NAME=$( head --lines=1 ${ROBOT_CODE}/yarp_robot_name.txt )
- fi
+# export YARP_ROBOT_NAME=
+if [ "$YARP_ROBOT_NAME" = "" ] && [ -f "${ROBOT_CODE}/yarp_robot_name.txt" ]
+then
+  export YARP_ROBOT_NAME=$( head --lines=1 ${ROBOT_CODE}/yarp_robot_name.txt )
+fi
+
 # Set-up optimizations
 export CMAKE_BUILD_TYPE=Release
-export PATH=$PATH:$ICUB_DIR/bin:$YARP_DIR/bin
+
 # DebugStream customization
 export YARP_VERBOSE_OUTPUT=0
 export YARP_COLORED_OUTPUT=1
 export YARP_TRACE_ENABLE=0
 export YARP_FORWARD_LOG_ENABLE=0
-# To enable tab completion on yarp port names
-if [ -f $YARP_ROOT/scripts/yarp_completion ]; then
-  source $YARP_ROOT/scripts/yarp_completion
-fi
-# For compiling
+
 DRIVER_ROOT=/lib/modules/$(uname -r)/iCubDrivers/
 # to be used if the corresponding hardware is mounted on the robot 
 #export ESDCANAPI_DIR=${DRIVER_ROOT}/esdCanApi/
