@@ -1,7 +1,7 @@
 #===============================================================================
 # Title:        bashrc_iCub.sh
 # Description:  this is the iCub enviroment file - SUPERBUILD version for PC104
-# Date:         2021-MAR-02
+# Date:         2021-JUL-14
 # Usage:        source bashrc_iCub.sh
 #===============================================================================
 if [ "$PS1" ]; then
@@ -53,5 +53,5 @@ export YARP_COLORED_OUTPUT=1
 export YARP_TRACE_ENABLE=0
 export YARP_FORWARD_LOG_ENABLE=0
 
-DRIVER_ROOT=/lib/modules/$(uname -r)/iCubDrivers/
+DRIVER_ROOT=/lib/modules/$(uname -r)/iCubDrivers
 export CFW2CANAPI_DIR=${DRIVER_ROOT}/cfw002/
