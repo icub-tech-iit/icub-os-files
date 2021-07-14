@@ -54,4 +54,4 @@ export YARP_TRACE_ENABLE=0
 export YARP_FORWARD_LOG_ENABLE=0
 
 DRIVER_ROOT=/lib/modules/$(uname -r)/iCubDrivers
-export CFW2CANAPI_DIR=${DRIVER_ROOT}/cfw002/
+export CFW2CANAPI_DIR=${DRIVER_ROOT}/cfw002
