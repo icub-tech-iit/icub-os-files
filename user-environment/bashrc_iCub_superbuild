@@ -52,3 +52,10 @@ export YARP_VERBOSE_OUTPUT=0
 export YARP_COLORED_OUTPUT=1
 export YARP_TRACE_ENABLE=0
 export YARP_FORWARD_LOG_ENABLE=0
+
+# Drivers section
+DRIVER_ROOT=/lib/modules/$(uname -r)/iCubDrivers/
+# to be used if the corresponding hardware is mounted on the robot 
+#export ESDCANAPI_DIR=${DRIVER_ROOT}/esdCanApi/
+#export PLXCANAPI_DIR=${DRIVER_ROOT}/plxCanApi/
+export CFW2CANAPI_DIR=${DRIVER_ROOT}/cfw002/
