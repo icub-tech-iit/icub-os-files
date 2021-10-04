@@ -1,4 +1,4 @@
 # Source Dest_mountpoint FS_type options
 # (please do not use blank spaces)
-10.0.0.1:/exports/code /usr/local/src/robot nfs soft,retry=1,timeo=60,_netdev,auto
-10.0.0.1:/exports/local_yarp /home/icub/.local/share/yarp nfs  soft,retry=1,timeo=60,_netdev,auto
+10.0.0.1:/exports/code /usr/local/src/robot nfs _netdev,auto
+10.0.0.1:/exports/local_yarp /home/icub/.local/share/yarp nfs  _netdev,auto
