@@ -804,7 +804,7 @@ int cfw002_ioctl(struct inode *inode, struct file *filep,
 				(2 + num*(4+2+8)) * sizeof(char))))
 			*/
 
-			if(unlikely(!access_ok(VERIFY_READ | VERIFY_WRITE, buf,
+			if(unlikely(!access_ok( buf,
 				 sizeof(hdr))))
 
 				return -EINVAL;
@@ -812,7 +812,7 @@ int cfw002_ioctl(struct inode *inode, struct file *filep,
 			if (__copy_from_user(&hdr,buf,sizeof(hdr)))
 				return -EFAULT;
 
-			if(unlikely(!access_ok(VERIFY_READ, hdr.bufp,
+			if(unlikely(!access_ok( hdr.bufp,
 				 sizeof(struct cfw002_rtxdesc)*num)))
 
 				return -EINVAL;
@@ -916,7 +916,7 @@ int cfw002_ioctl(struct inode *inode, struct file *filep,
 
 			__get_user(port,buf);*/
 
-			if(unlikely(!access_ok(VERIFY_READ | VERIFY_WRITE, buf,
+			if(unlikely(!access_ok( buf,
 				 sizeof(hdr))))
 
 				return -EINVAL;
@@ -926,7 +926,7 @@ int cfw002_ioctl(struct inode *inode, struct file *filep,
 			block = hdr.block;
 		//	printk("read port %x num %x size %x \n",port,num, sizeof(struct cfw002_rtxdesc)*num);
 
-			if(unlikely(!access_ok(VERIFY_WRITE, hdr.bufp,
+			if(unlikely(!access_ok( hdr.bufp,
 				sizeof(struct cfw002_rtxdesc)*num)))
 
 				return -EINVAL;
@@ -1046,7 +1046,7 @@ int cfw002_ioctl(struct inode *inode, struct file *filep,
 		//	printk("stat\n");
 			buf = (char __user *)arg;
 
-			if(unlikely(!access_ok(VERIFY_READ | VERIFY_WRITE, buf,sizeof(struct cfw002_errstate))))
+			if(unlikely(!access_ok( buf,sizeof(struct cfw002_errstate))))
 				return -EINVAL;
 
 			if (__copy_from_user(&port,buf,sizeof(u8)))
