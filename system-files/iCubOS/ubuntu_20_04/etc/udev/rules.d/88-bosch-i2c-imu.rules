@@ -1,0 +1,2 @@
+# iCub Bosch i2c IMU
+SUBSYSTEM=="i2c-dev", ATTRS{name}=="i2c-kempld", SYMLINK+="bosch-i2c-imu", MODE="0660", GROUP="i2c"

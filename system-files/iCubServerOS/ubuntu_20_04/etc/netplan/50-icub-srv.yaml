@@ -1,0 +1,13 @@
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    enp1s0:
+      dhcp4: true
+      dhcp6: false
+      dhcp-identifier: mac
+      optional: true
+    enp2s0:
+      dhcp4: false
+      dhcp6: false
+      addresses: [10.0.0.1/24]
+  version: 2

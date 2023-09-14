@@ -1,0 +1,34 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+# Include files from /etc/network/interfaces.d:
+#source /etc/network/interfaces.d/*
+#bonding documentation https://help.ubuntu.com/community/UbuntuBonding
+# enp3s0 is manually configured, and slave to the "bond0" bonded NIC
+auto enp3s0
+iface enp3s0 inet manual
+    bond-master bond0
+    bond-primary enp3s0
+    
+
+# wlp2s0 ditto, thus creating a 2-link bond.
+auto wlp2s0
+iface wlp2s0 inet manual
+    bond-master bond0
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+# bond0 is the bonding NIC and can be used like any other normal NIC.
+# bond0 is configured using static network information.
+auto bond0
+iface bond0 inet static
+    address 10.0.0.2
+    gateway 10.0.0.1
+    netmask 255.255.255.0
+    dns-nameservers 10.0.0.1 8.8.8.8
+    bond-mode active-backup
+    bond-miimon 100
+    bond-slaves enp3s0 wlp2s0
+ 
+auto enp4s0
+iface enp4s0 inet static
+    address 10.0.1.104
+    netmask 255.255.255.0    
+    

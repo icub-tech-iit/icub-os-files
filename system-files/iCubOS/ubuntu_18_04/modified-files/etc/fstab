@@ -1,0 +1,3 @@
+UUID=209ab836-eefa-11e8-b8c9-00e04b6543ae / ext4 defaults 0 0
+UUID=ACB8-5BC2 /boot/efi vfat defaults 0 0
+/swap.img	none	swap	sw	0	0

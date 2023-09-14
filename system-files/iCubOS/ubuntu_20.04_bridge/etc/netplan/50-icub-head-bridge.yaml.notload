@@ -1,0 +1,30 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp4s0:
+      dhcp4: no
+      dhcp6: no
+    enp5s0:
+      dhcp4: no
+      dhcp6: no
+      addresses: [10.0.1.104/24]
+      optional: true
+  wifis:
+    wlp3s0:
+      dhcp4: no
+      dhcp6: no
+      access-points:
+        "iCub3_000-Wifi5":
+          password: "iCubWifi"
+  bridges:
+    br0:
+#set a macaddress for the bridge interface    
+      macaddress: 68:54:5a:ce:d7:c3
+      dhcp4: no
+      dhcp6: no
+      addresses: [10.0.0.2/24]
+      gateway4: 10.0.0.1
+      interfaces: [wlp3s0, enp4s0]
+      nameservers:
+        addresses: [10.0.0.1]

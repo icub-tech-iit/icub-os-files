@@ -1,0 +1,10 @@
+[Unit]
+Description=Ping all the hosts
+
+[Service]
+ExecStart=/usr/local/src/robot/ping-everyone/ping-everyone.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

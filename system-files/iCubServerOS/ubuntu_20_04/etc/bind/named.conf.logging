@@ -1,0 +1,44 @@
+logging {
+    channel query_log {
+        file "/var/log/bind/query.log" versions 600 size 20m;
+        print-time yes;
+        print-category yes;
+        print-severity yes;
+        severity warning;
+    };
+
+    channel query-errors_log {
+        file "/var/log/bind/query-errors.log" versions 5 size 20m;
+        print-time yes;
+        print-category yes;
+        print-severity yes;
+        severity warning;
+    };
+
+    channel default_log {
+        file "/var/log/bind/default.log" versions 3 size 20m;
+        print-time yes;
+        print-category yes;
+        print-severity yes;
+        severity info;
+    };
+
+    channel ddns_log {
+        file "/var/log/bind/ddns.log" versions 3 size 20m;
+        print-time yes;
+        print-severity yes;
+        print-category yes;
+        severity info;
+    };
+
+    category default { default_log; };
+    category config { default_log; };
+    category dispatch { default_log; };
+    category network { default_log; };
+    category general { default_log; };
+    category queries { query_log; };
+    category query-errors {query-errors_log; };
+    category update{ ddns_log; };
+    category update-security { ddns_log; };
+};
+
