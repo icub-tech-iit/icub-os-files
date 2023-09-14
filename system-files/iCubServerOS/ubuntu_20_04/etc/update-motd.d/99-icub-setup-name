@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+#    00-icub-setup-name - shows the iCub Setup NAME
+#
+ROBOT_NAME_FILE="/exports/code/yarp_robot_name.txt"
+
+if [ -f "$ROBOT_NAME_FILE" ]; then
+  ROBOT_NAME=$(cat $ROBOT_NAME_FILE)
+  if [ "$ROBOT_NAME" != "" ]; then
+    printf "You are connected to the setup $ROBOT_NAME"
+  fi
+fi

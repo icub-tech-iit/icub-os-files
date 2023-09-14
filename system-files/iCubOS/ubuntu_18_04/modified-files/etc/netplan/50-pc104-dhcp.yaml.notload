@@ -1,0 +1,12 @@
+network:
+  version: 2
+  ethernets:
+    enp1s0:
+      dhcp4: yes
+      dhcp6: no
+      optional: true
+    enp2s0:
+      dhcp4: no
+      dhcp6: no
+      addresses: [10.0.1.104/24]
+      optional: true

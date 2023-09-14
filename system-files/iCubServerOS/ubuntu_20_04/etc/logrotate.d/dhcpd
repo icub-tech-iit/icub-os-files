@@ -1,0 +1,8 @@
+/var/log/dhcpd/dhcpd.log {
+  rotate 4
+  daily
+  create
+  compress
+  missingok
+  notifempty
+}

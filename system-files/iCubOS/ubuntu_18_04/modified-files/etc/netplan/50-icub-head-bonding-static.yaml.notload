@@ -1,0 +1,36 @@
+network:
+  version: 2
+  ethernets:
+    enp4s0:
+      dhcp4: no
+      dhcp6: no
+      optional: true
+    eno1:
+      dhcp4: no
+      dhcp6: no
+      addresses: [10.0.1.104/24]
+      optional: true
+  wifis:
+    wlp2s0:
+      dhcp4: no
+      dhcp6: no
+      access-points:
+        "green-icub":
+          password: "iCubWifi"
+      optional: true
+  bonds:
+    main-bond:
+      addresses: [10.0.0.2/24]
+      gateway4: 10.0.0.1
+      nameservers:
+        search: [icub.local]
+        addresses: 
+          - 10.0.0.1
+      interfaces:
+        - enp4s0
+        - wlp2s0
+      parameters:
+        mode: active-backup
+        primary: enp4s0
+        mii-monitor-interval: 1
+        gratuitious-arp: 5

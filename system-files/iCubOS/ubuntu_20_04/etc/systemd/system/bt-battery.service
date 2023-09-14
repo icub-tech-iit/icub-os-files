@@ -1,0 +1,10 @@
+[Unit]
+Description=Connect to the BCB board via bluetooth using rfcomm
+After=bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /etc/rc.iCub.d/bt-battery_connect.sh
+
+[Install]
+WantedBy=multi-user.target

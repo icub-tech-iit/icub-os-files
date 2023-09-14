@@ -1,0 +1,11 @@
+/var/log/bind/default.log
+/var/log/bind/ddns.log
+/var/log/bind/query.log
+/var/log/bind/query-errors.log {
+  rotate 4
+  daily
+  create
+  compress
+  missingok
+  notifempty
+}

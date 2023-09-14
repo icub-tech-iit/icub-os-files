@@ -1,0 +1,25 @@
+$ORIGIN .
+$TTL 604800	; 1 week
+icub.local		IN SOA	icub-srv.icub.local. root.icub.local. (
+				106        ; serial
+				604800     ; refresh (1 week)
+				86400      ; retry (1 day)
+				2419200    ; expire (4 weeks)
+				604800     ; minimum (1 week)
+				)
+			NS	icub-srv.icub.local.
+$ORIGIN icub.local.
+dns			CNAME	icub-srv
+icub-dns		CNAME	icub-srv
+icub-head		A	10.0.0.2
+icub-nfs		CNAME	icub-srv
+icub-ntp		CNAME	icub-srv
+icub-server		CNAME	icub-srv
+icub-srv		A	10.0.0.1
+icub-switch		A	10.0.0.253
+$TTL 300	; 5 minutes
+IITICUBLAP217		A	10.0.0.118
+			DHCID	( AAEB/D6rulFbngloxDJ+h8f3wOEaHPjolAx+eOBbyTXT
+				kns= ) ; 1 1 32
+$TTL 604800	; 1 week
+pc104			CNAME	icub-head

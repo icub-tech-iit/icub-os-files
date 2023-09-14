@@ -1,0 +1,3 @@
+  /var/log/dhcpd/** rw,
+  /var/log/dhcpd/ rw,
+  @{PROC}/sys/net/ipv4/ip_local_port_range r,

@@ -1,0 +1,15 @@
+;
+; BIND reverse data file for 10.0.0.xx
+;
+$TTL    604800
+@       IN      SOA     icub-srv.icub.local. root.icub.local. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      icub-srv.icub.local.
+1       IN      PTR     icub-srv.icub.local.
+2       IN      PTR     icub-head.icub.local.
+253     IN      PTR     icub-switch.icub.local.

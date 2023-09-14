@@ -1,0 +1,22 @@
+;
+; BIND data file for the icub.org local domain
+;
+$TTL    604800
+@       IN      SOA     icub-srv.icub.local. root.icub.local. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800         ; Negative Cache TTL
+                        );
+@       IN      NS      icub-srv.icub.local.
+; --- DNS Entries (local machine) ---
+icub-srv        IN      A       10.0.0.1
+icub-server             CNAME   icub-srv
+dns                     CNAME   icub-srv
+icub-dns                CNAME   icub-srv
+icub-nfs                CNAME   icub-srv
+icub-ntp                CNAME   icub-srv
+; --- DNS Entries (network) ---
+icub-head       IN      A       10.0.0.2
+pc104                   CNAME   icub-head
